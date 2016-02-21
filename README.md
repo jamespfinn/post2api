@@ -18,10 +18,14 @@ Encode a PHP array in JSON or YAML, then HTTP POST to an API
 
 
 //EXAMPLE USAGE:
+```php
 $myData=array("debug"=>1,"force"=>1,"svc_uid"=>"admin","svc_pw"=>"adminmgr","uid"=>"jondoe","op"=>"delete","role"=>"cn=nsmanageddisabledrole,dc=myco,dc=com");
 echo post2api($myData, "http://it.mycompany.com/api/role.json.php", "json") // this will echo the output from the POST
+```
 
 // you could also do something like for json
+```php
 $result = post2api($myData, "http://it.mycompany.com/api/role.json.php", "json") // this will echo the output from the POST
 $newArray = json_decode($result);
 var_dump($newArray);
+```
